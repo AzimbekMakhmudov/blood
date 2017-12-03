@@ -1,0 +1,20 @@
+.rd-navbar-nav {
+  font-size: 16px;
+}
+.rd-navbar-nav > li > a {
+  text-decoration: none!important;
+  color: black;
+}
+.rd-navbar-nav > li > a:hover {
+  color: red;
+}
+.rd-navbar-nav > li > .true {
+  color: red;
+}
+#map {
+  height: 400px;
+  width: 100%;
+}
+
+
+

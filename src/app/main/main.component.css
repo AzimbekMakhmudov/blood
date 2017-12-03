@@ -1,0 +1,12 @@
+.thumbnail {
+  padding: 0;
+  border: none;
+}
+.rd-navbar-nav a {
+  text-decoration: none;
+}
+.userText{
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+}

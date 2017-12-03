@@ -1,0 +1,130 @@
+<div style="background-image: url('assets/images/index-01.jpg');height: auto;">
+  <div class="container">
+    <div class="row panel panel-heading" style="margin-bottom: 30px;margin-top: 20px">
+      <div class="col-sm-4"><img src="assets/images/user.png" height="50px"> {{muser.user.username}}</div>
+      <div class="col-sm-8">
+        <div class="rd-navbar-wrap">
+          <nav data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fullwidth" data-md-device-layout="rd-navbar-fixed"
+               data-sm-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static"
+               data-lg-device-layout="rd-navbar-fixed" data-sm-stick-up-offset="150px" data-lg-stick-up-offset="150px"
+               class="rd-navbar rd-navbar-index rd-navbar-original rd-navbar-static">
+            <div class="rd-navbar-inner">
+              <div class="rd-navbar-nav-wrap toggle-original-elements">
+                  <ul class="rd-navbar-nav" style="float: right">
+                    <li><a (click)="change(1)" [class]="hospital">Hospitals</a></li>
+                    <li><a (click)="change(2)" [class]="history">News</a></li>
+                    <li><a routerLink="/logout">Log out</a></li>
+                  </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="row">
+      <div class="col-sm-3">
+        <ul class="list-group">
+          <li class="list-group-item text-muted">Profile</li>
+          <li class="list-group-item text-right"><span class="pull-left"><strong>Full name</strong></span> <a style="font-size: 12px" data-toggle="modal" data-target="#exampleModal">{{fullname}}</a></li>
+          <li class="list-group-item text-right"><span class="pull-left"><strong>Email</strong></span> <span style="font-size: 12px">{{email}}</span></li>
+        </ul>
+        <ul class="list-group">
+          <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i></li>
+          <li class="list-group-item text-right"><span class="pull-left"><strong>Donation</strong></span> 125</li>
+        </ul>
+      </div>
+      <div class="col-sm-9">
+        <div class="tab-content" [hidden]="!history" style="padding-bottom: 515px">
+          <div class="tab-pane panel active">
+            <h4 class="panel-heading">News</h4>
+            <div class="table-responsive panel-body">
+              <table class="table table-hover">
+                <tbody>
+                  <tr *ngFor="let data of news">
+                  <td>
+                    <div class="col-md-6">
+                      <h5><span style="color: red">{{data.blood_group}}</span> blood type is needed.<br> Deadline is <span style="color: blue">{{convertDate(data.deadline)}}</span></h5>
+                    </div>
+                    <div class="col-md-6">
+                    <ul class="list-group" style="font-size: 10px">
+                    <li class="list-group-item text-right"><span class="pull-left"><strong>Hospital name</strong></span> {{data.hospital.name}}</li>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong>Address</strong></span> {{data.hospital.address}}</li>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong>Phone</strong></span> {{data.hospital.phone_number}}</li>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong>Website</strong></span> <a href="{{data.hospital.homepage}}">{{data.hospital.homepage}}</a></li>
+                  </ul>
+                  </div>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="tab-content" [hidden]="!hospital">
+          <div class="tab-pane panel active">
+            <h4 class="panel-heading">Hospitals</h4>
+            <div class="table-responsive panel-body">
+              <table class="table table-hover">
+                <tbody>
+                <tr *ngFor="let data of hospitals">
+                  <td>
+                    <ul class="list-group">
+                    <li class="list-group-item text-muted">Hospital</li>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong>Name</strong></span> {{data.name}}</li>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong>Address</strong></span> {{data.address}}<a class="btn btn-sm btn-success" style="margin-left: 10px" (click)="sentLocation(data)"><i class="fa fa-map-marker"></i></a></li>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong>Phone</strong></span> {{data.phone_number}}</li>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong>Website</strong></span> <a href="{{data.homepage}}">{{data.homepage}}</a></li>
+                  </ul>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-content" [hidden]="!gps" style="padding-bottom: 400px">
+          <div class="tab-pane panel active">
+          <h3 class="panel-heading">{{hospitalName}}</h3>
+          <div id="map"></div>
+          <div class="panel-body">
+            <input type="button" class="btn btn-warning" (click)="address()" [value]="addrVal">
+            <!--<input type="button" class="btn btn-success" (click)="getDirection()" value="Get Direction">-->
+            <div style="float: right;" [hidden]="!getAddr">{{addr}}</div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Set name</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form [formGroup]="myform" (ngSubmit)="onSubmit(myform.value)">
+      <div class="modal-body">
+          <div class="form-group">
+            <label>First name</label>
+          <input name="first_name" type="text" class="form-control" [formControl]="myform.controls['first_name']">
+          </div>
+        <div class="form-group">
+          <label>Last name</label>
+          <input name="last_name" type="text" class="form-control" [formControl]="myform.controls['last_name']">
+          <input type="hidden" name="username" [formControl]="myform.controls['username']">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>

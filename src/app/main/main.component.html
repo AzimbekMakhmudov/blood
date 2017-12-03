@@ -1,0 +1,373 @@
+<div class="page text-center" xmlns="">
+  <header style="background: url(assets/images/index-01.jpg) center no-repeat; background-size: cover;"
+          class="page-header context-dark">
+    <div class="rd-navbar-wrap">
+      <nav data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fullwidth" data-md-device-layout="rd-navbar-fixed"
+           data-sm-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static"
+           data-lg-device-layout="rd-navbar-fixed" data-sm-stick-up-offset="150px" data-lg-stick-up-offset="150px"
+           class="rd-navbar rd-navbar-index rd-navbar-original rd-navbar-static">
+        <div class="rd-navbar-inner">
+          <div class="rd-navbar-nav-wrap toggle-original-elements">
+            <!-- RD Navbar Nav-->
+            <ul class="rd-navbar-nav" style="float: left">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#">How to donate</a></li>
+              <li><a href="#">About us</a></li>
+            </ul>
+            <div *ngIf="muser == null">
+            <ul class="rd-navbar-nav" style="float: right">
+               <li><a routerLink="/signin">Sign in</a></li>
+               <li><a routerLink="/signup">Sign up</a></li>
+            </ul>
+            </div>
+            <div class="btn-group" dropdown *ngIf="muser != null" style="float: right">
+              <a dropdownToggle class="dropdown-toggle userText">
+                <img src="assets/images/user.png" width="25px"> {{muser.user.username}}<span class="caret"></span>
+              </a>
+              <ul *dropdownMenu class="dropdown-menu" role="menu">
+                <li role="menuitem"><a class="dropdown-item" routerLink="/profile">Profile</a></li>
+                <li class="divider dropdown-divider"></li>
+                <li role="menuitem"><a class="dropdown-item" routerLink="/logout">Log out</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <div class="shell text-md-left section-top-86 section-bottom-56">
+      <div class="range">
+        <div class="cell-md-10">
+          <!-- Owl Carousel-->
+          <div data-items="1" data-loop="false" data-mouse-drag="false" data-dots="true"
+               class="owl-carousel owl-theme owl-loaded owl-text-select-on" style="">
+            <div class="owl-stage-outer">
+              <div class="owl-stage"
+                   style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 2910px;">
+                <div class="owl-item active" style="width: 970px; margin-right: 0px;">
+                  <div class="item">
+                    <h1>
+                      <span class="text-danger">we change</span>
+                      <br class="veil reveal-md-block">
+                      <span class="text-carlo">the life </span><span class="text-warning">of
+                    <br class="veil reveal-md-block">
+                    those</span> who
+                      <br class="veil reveal-md-block">
+                      have no hope
+                    </h1>
+                  </div>
+                </div>
+                <div class="owl-item" style="width: 970px; margin-right: 0px;">
+                  <div class="item">
+                    <h1>
+                      <span class="text-danger">Give a</span>
+                      <br class="veil reveal-md-block">
+                      <span class="text-carlo">helping </span>hand
+                      <br class="veil reveal-md-block">
+                      <span class="text-warning">to those</span> who
+                      <br class="veil reveal-md-block">
+                      need it!
+                    </h1>
+                  </div>
+                </div>
+                <div class="owl-item" style="width: 970px; margin-right: 0px;">
+                  <div class="item">
+                    <h1>
+                      <span class="text-danger">let`s build</span>
+                      <br class="veil reveal-md-block">
+                      <span class="text-carlo">the world </span>
+                      <br class="veil reveal-md-block">
+                      <span class="text-warning">without</span>
+                      <br class="veil reveal-md-block">
+                      child abuse
+                    </h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Page Content-->
+  <main class="page-content">
+    <section class="section-40">
+      <div class="shell">
+        <div class="range text-md-left">
+          <div class="cell-lg-4 cell-md-5 text-spacing-25">
+            <h3 class="text-uppercase"><a href="/signup" class="text-carnation">register now and donate!</a></h3>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      style="background: url(assets/images/index-02.jpg) no-repeat; background-size: cover; background-position: center;"
+      class="text-md-left context-dark section-top-94 section-bottom-136">
+      <div class="shell">
+        <div class="range range-xs-right">
+          <div class="cell-md-8 cell-lg-7">
+            <h2 class="text-spacing-25">Our mission:</h2>
+            <p>The work of our Organization is aimed at targeted
+              assistance to children in the form of charitable donations from sponsors
+              and patrons, as well as providing material, technical, informational
+              and legal and humanitarian assistance through charitable events and
+              programs. We also offer additional resources to families with children
+              all over the world as well as support to schools and kindergartens
+              located in poor regions.</p>
+          </div>
+        </div>
+        <div class="range offset-top-32 text-left">
+          <div class="cell-lg-5 cell-md-6">
+            <div class="media">
+              <div class="media-left"><span class="media-icon icon icon-xl fl-line-icon-set-umbrella14"></span></div>
+              <div class="media-body">
+                <h3 class="text-spacing-25">help &amp; support</h3>
+                <p>Our charity organization provides financial,
+                  technical and humanitarian assistance within various charitable programs
+                  designed to help every person in the world and to push society forward.</p>
+              </div>
+            </div>
+          </div>
+          <div class="cell-lg-5 cell-md-6 offset-top-60 offset-md-top-0">
+            <div class="media">
+              <div class="media-left"><span class="media-icon icon icon-lg fl-line-icon-set-wide6"></span></div>
+              <div class="media-body">
+                <h3 class="text-spacing-25">education</h3>
+                <p>The promotion of education and the improvement of
+                  creative abilities of children and youth in developing countries have
+                  been our global goals since the establishment of our charity
+                  organization.</p>
+              </div>
+            </div>
+          </div>
+          <div class="cell-lg-5 cell-md-6 offset-top-60">
+            <div class="media">
+              <div class="media-left"><span class="media-icon icon icon-xl fl-line-icon-set-user73"></span></div>
+              <div class="media-body">
+                <h3 class="text-spacing-25">adoption</h3>
+                <p>We help orphans find a family and discover what
+                  real family values and happiness are. Our organization understands how
+                  important it is to find a loving family, and we do everything to make it
+                  happen.</p>
+              </div>
+            </div>
+          </div>
+          <div class="cell-lg-5 cell-md-6 offset-top-60">
+            <div class="media">
+              <div class="media-left"><span class="media-icon icon icon-xl fl-line-icon-set-tshirt14"></span></div>
+              <div class="media-body">
+                <h3 class="text-spacing-25">volunteering</h3>
+                <p>We invite everyone to take part in our volunteer
+                  abroad programs to set up additional education, provide training,
+                  promote the employment of adolescents, and change our world for the
+                  better.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      style="background: url(assets/images/index-03.jpg) no-repeat; background-size: cover; background-position: center;"
+      class="text-md-left context-dark section-top-56 section-lg-bottom-448 section-sm-bottom-300 section-bottom-86">
+      <div class="shell">
+        <div class="range">
+          <div class="cell-md-8">
+            <h3 class="text-spacing-25">
+              LAST YEAR <span class="text-warning">“Open heart”</span>
+              <br class="veil reveal-md-block">
+              <span class="text-charlotte">SUPPORTED PROGRAMS</span> <span class="text-primary">THAT
+                  <br class="veil reveal-lg-block">
+                  SERVED OVER</span> 700,000
+              <br class="veil reveal-lg-block">
+              CHILDREN IN 23 COUNTRIES.
+            </h3>
+          </div>
+          <div class="cell-md-4">
+            <h2><a href="#" class="text-white"><span class="text-lg-nowrap">view our</span><br><span>report 2015</span></a>
+            </h2>
+          </div>
+          <div class="cell-md-7 offset-top-40">
+            <p>With a view to providing psychological, medical,
+              social and material of charitable aid to children and families affected
+              by terror, as well as military families, killed in the line of duty and
+              orphans, we established Open Heart. We also help underprivileged
+              children and orphans from around the world. One of the directions of our
+              Foundation is to help children from third world countries. Everyone can
+              participate in the work of the Organization and assist those in need.</p><a href="#" class="link">read
+            more</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section-86">
+      <div class="shell">
+        <div class="range text-md-left">
+          <div class="cell-md-5 cell-lg-7">
+            <h1 class="h1">
+                  <span class="text-bittersweet">we need
+                  <br class="veil reveal-md-block">
+                  volunteers
+                  <br class="veil reveal-md-block">
+                  in</span> <span class="text-warning">south
+                  <br class="veil reveal-md-block">
+                  africa</span>
+            </h1>
+          </div>
+          <div class="cell-md-7 cell-lg-5 offset-lg-top-118 offset-top-10">
+            <div class="range range-xs-right">
+              <div class="cell-md-8 cell-lg-7 text-bittersweet">
+                <p>Our team really needs volunteers. Those who are
+                  willing and have the desire to help those in need. If you are young,
+                  active and ready to change the world for the better, we look forward to
+                  seeing you.</p>
+              </div>
+            </div>
+            <p class="offset-top-10 offset-md-top-52 text-warning">Participating
+              in our South Africa Volunteer programs gives an opportunity to explore
+              Africa in all its beauty – starting as a part of our group, you will
+              immerse deeper into the nature, culture, and society of various South
+              Africa regions. You will get the best of Africa and its vibrant energy.
+              Our team will be glad to offer you any necessary assistance if you don’t
+              have previous experience in volunteering in this part of the world.</p><a href="#" class="link">read
+            more</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      style="background: url(assets/images/index-07.jpg) no-repeat; background-size: cover; background-position: right;"
+      class="section-94">
+      <div class="shell text-md-left">
+        <div class="range range-xs-right">
+          <div class="cell-lg-7">
+            <h2>
+              <span class="text-danger">successful</span>
+              stories:
+            </h2>
+          </div>
+        </div>
+        <div class="range range-xs-right offset-top-40">
+          <div class="cell-sm-6 cell-md-5 cell-lg-3">
+            <p>Open Heart has been a partner charity to Women V
+              Cancer for over 4 years and they have always been delighted with Action
+              for Charity’s professional event management. They helped us a lot during
+              our cooperation. We greatly appreciate what they have done to promote
+              what we are doing.</p>
+            <p class="text-ubold text-spacing-25 offset-top-20">Sara Johnson</p>
+          </div>
+          <div class="cell-sm-6 cell-md-5 cell-lg-3">
+            <p>The dedication and the charity work volunteers of
+              Open Heart are doing worldwide can’t be underestimated. We cooperated
+              with them a year ago during a conflict in Syria, and their team members
+              offered unprecedented assistance.</p>
+            <p class="text-ubold text-spacing-25 offset-top-20">Richard Tompson</p>
+          </div>
+        </div>
+        <div class="range range-xs-right offset-top-40">
+          <div class="cell-sm-6 cell-md-5 cell-lg-3">
+            <p>This charity organization does what a lot of other
+              charities should have been doing years ago. It is great that Open Heart
+              exists. Their volunteers not just give necessary resources and
+              assistance, they give hope to all the needy out there.</p>
+            <p class="text-ubold text-spacing-25 offset-top-20">Denis Nelson</p>
+          </div>
+          <div class="cell-sm-6 cell-md-5 cell-lg-3 offset-md-top-20">
+            <h5 class="text-uppercase text-spacing-25">Enter your email here to reсeive our news &amp; updates:</h5>
+            <!-- RD Mailform-->
+            <form data-form-output="form-output-global" data-form-type="subscribe" method="post"
+                  action="bat/rd-mailform.php" class="offset-top-20 text-md-right rd-mailform" novalidate="novalidate">
+              <div class="form-group">
+                <input id="contact-email" name="email" data-constraints="@Email @Required"
+                       class="form-control form-control-has-validation form-control-last-child" type="email"><span
+                class="form-validation"></span>
+              </div>
+              <button type="submit" class="link text-cinnabar offset-top-14 text-spacing-0">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Page Footer-->
+  <footer class="page-footer">
+    <div class="shell text-md-left">
+      <div class="range">
+        <div class="cell-lg-4 cell-md-5 cell-md-push-1">
+          <p class="text-ubold text-spacing-50">Call us:</p>
+          <div><a href="callto:#" class="h3">800 345 6789</a></div>
+          <p class="offset-top-20 text-ubold text-spacing-50">
+            My Company , 4578 Marmora Road,
+            <br class="veil reveal-md-block">
+            Glasgow D04 89GR
+            <br class="">
+            Email: <a href="mailto:#">info@demolink.org</a>
+
+          </p>
+        </div>
+        <div class="cell-md-3 cell-md-push-1">
+          <ul class="list-inline">
+            <li><a href="#" class="icon fa-facebook"></a></li>
+            <li><a href="#" class="icon fa-google-plus"></a></li>
+            <li><a href="#" class="icon fa-linkedin"></a></li>
+            <li><a href="#" class="icon fa-twitter"></a></li>
+          </ul>
+        </div>
+        <div class="cell-md-4 cell-lg-5">
+          <div class="logo"><a href="http://livedemo00.template-help.com/wt_59556/"><img
+            src="assets/images/ic.png" alt=""></a>
+            <div>
+              <p>©<span id="copyright-year">2017</span></p><a
+              href="http://livedemo00.template-help.com/wt_59556/privacy.html">Privacy Policy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- {%FOOTER_LINK}-->
+</div>
+<!-- Global Mailform Output-->
+<div id="form-output-global" class="snackbars"></div>
+<!-- PhotoSwipe Gallery-->
+<div tabindex="-1" role="dialog" aria-hidden="true" class="pswp">
+  <div class="pswp__bg"></div>
+  <div class="pswp__scroll-wrap">
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <div class="pswp__counter"></div>
+        <button title="Close (Esc)" class="pswp__button pswp__button--close"></button>
+        <button title="Share" class="pswp__button pswp__button--share"></button>
+        <button title="Toggle fullscreen" class="pswp__button pswp__button--fs"></button>
+        <button title="Zoom in/out" class="pswp__button pswp__button--zoom"></button>
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip"></div>
+      </div>
+      <button title="Previous (arrow left)" class="pswp__button pswp__button--arrow--left"></button>
+      <button title="Next (arrow right)" class="pswp__button pswp__button--arrow--right"></button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__cent"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  $(document).ready(function(){
+    $('.owl-carousel').owlCarousel();
+  });
+</script>
